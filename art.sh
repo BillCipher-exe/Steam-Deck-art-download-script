@@ -36,7 +36,7 @@ curl https://steamcdn-a.akamaihd.net/steam/apps/$id/library_hero.jpg --output ${
 size_box=$(wc -c ${id}_hero.jpg | awk '{print $1}')
 if [ $size_box -lt 1000 ]
 then
-	echo ERROR: No Header found for ID= &id
+	echo ERROR: No hero banner found for ID= &id
 	rm ${id}_hero.jpg
 else
 	cp ${id}_hero.jpg ${grid_path}${id_ziel}_hero.jpg
@@ -47,7 +47,7 @@ curl https://steamcdn-a.akamaihd.net/steam/apps/$id/logo.png --output ${id}_logo
 size_box=$(wc -c ${id}_logo.png | awk '{print $1}')
 if [ $size_box -lt 1000 ]
 then
-	echo ERROR: No Header found for ID= &id
+	echo ERROR: No logo found for ID= &id
 	rm ${id}_logo.png
 else
 	cp ${id}_logo.png ${grid_path}${id_ziel}_logo.png
